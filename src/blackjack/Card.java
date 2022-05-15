@@ -1,4 +1,4 @@
-/*        © 12.2021 Salma Ayman     */
+/*        © 2021 Salma Ayman     */
 package blackjack;
 
 public class Card {
@@ -14,14 +14,14 @@ public class Card {
         this.value = value;
     }
 
-    // Copy constructor
+    // Copy constructor // a must for the GUI
     public Card(Card copiedCard) {
         this.suit = copiedCard.suit;
         this.rank = copiedCard.rank;
         this.value = copiedCard.value;
     }
 
-    // Getters for the attributes
+    // Getters for the attributes // a must for the GUI 
     public int getSuit() {
         return suit;
     }

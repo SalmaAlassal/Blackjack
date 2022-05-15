@@ -1,4 +1,4 @@
-/*        © 12.2021 Salma Ayman     */
+/*        © 2021 Salma Ayman     */
 
 package blackjack;
 
@@ -7,6 +7,7 @@ public class Player {
     private String Name;
     private int Score = 0;
 
+    // Array of 11 Card objects
     Card[] PlayerCards = new Card[11];
     int cardNumber = 0;
 
@@ -24,9 +25,7 @@ public class Player {
         this.PlayerCards[i] = new Card(Card);
     }
 
-    // the values of all the cards in the player’s hand at the beginning and after
-    // each hit
-
+   // The values of all the cards in the player’s hand at the beginning and after each hit
     public void setScore(int Score) {
         this.Score += Score;
     }

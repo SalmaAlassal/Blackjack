@@ -1,4 +1,4 @@
-/*        © 12.2021 Salma Ayman     */
+/*        © 2021 Salma Ayman     */
 
 package blackjack;
 
@@ -8,12 +8,7 @@ public class Game {
 
     // Generate 52-Card Deck
 
-    /*
-     * suit = 0 for Clubs,
-     * suit = 1 for Diamonds,
-     * suit = 2 for Hearts,
-     * suit = 3 for Spades
-     */
+    // suit = 0 for Clubs, suit = 1 for Diamonds , suit = 2 for Hearts, suit = 3 for Spades
 
     Card[] deckOfCards = new Card[52];
 
@@ -29,8 +24,7 @@ public class Game {
 
             deckOfCards[i] = new Card(suit, rank, value);
 
-            // To Print Cards
-
+            // To Print Cards on console
             /*
              * if (suit == 0) {
              * System.out.print("Club");
@@ -55,7 +49,6 @@ public class Game {
     }
 
     // Draw randomCard from the card deck array
-
     Card copiedCard;
 
     public Card randomCard() {
@@ -77,7 +70,7 @@ public class Game {
         }
 
         return copiedCard;
-
+    
     }
 
     // Set the playerInfo & 2 intial cards
@@ -89,7 +82,6 @@ public class Game {
      * A function that takes names from the user and draw 2
      * random cards for each player at the beginning of the game.
      */
-
     public void playerInfo(int i, String name) {
 
         player[i] = new Player(name);
@@ -100,7 +92,10 @@ public class Game {
 
             updateMaximumScore(i, player[i].cardNumber);
 
-            // To print the first 2 cards
+            BlackJack.gui.updatePlayerHand(randomCard, i);
+
+            // To print the first 2 cards on the console
+            /*
             if (player[i].PlayerCards[player[i].cardNumber].getSuit() == 0) {
 
                 System.out.print(player[i].getName() + " Card num : " + player[i].cardNumber + " - Club");
@@ -114,13 +109,13 @@ public class Game {
             }
             System.out.println(" value: " + player[i].PlayerCards[player[i].cardNumber].getValue()
                     + "  rank: " + player[i].PlayerCards[player[i].cardNumber].getRank());
-
+            */
         }
+        
 
     }
 
     // update Maximum Score of all players after each card
-
     int valid_HighScore = 0; // keeps track of the existing VALID high score of all players (<= 21)
     int whoGotHighscore;
 
@@ -135,7 +130,7 @@ public class Game {
 
     }
 
-    // calculate game result
+    // Calculate game result
     boolean isTie;
 
     public void gameResult() {
@@ -160,12 +155,10 @@ public class Game {
             System.out.println("Bust");
         } else {
             if (valid_HighScore == 21) {
-                System.out.println("player " + (whoGotHighscore + 1) + " wins. " + " He got BlackJack");
+                System.out.println("player " + (whoGotHighscore + 1) + " wins." + " He got BlackJack");
             } else {
-                System.out.println("player " + (whoGotHighscore + 1) + " wins. " + " His Score is: " + valid_HighScore);
+                System.out.println("player " + (whoGotHighscore + 1) + " wins." + " His Score is: " + valid_HighScore);
             }
         }
-
     }
-
 }
